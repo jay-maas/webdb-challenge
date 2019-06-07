@@ -3,12 +3,14 @@ const timestamp = require('time-stamp')
 
 const projectsRouter = require('./routes/projectsRouter.js')
 const actionsRouter = require('./routes/actionsRouter.js')
+const contextsRouter = require('./routes/contextsRouter.js')
 
 const server = express();
 
 server.use(logger)
 server.use('/api/projects', projectsRouter)
 server.use('/api/actions', actionsRouter)
+server.use('/api/contexts', contextsRouter)
 
 server.get('/', (req, res) => {
     res.send(`

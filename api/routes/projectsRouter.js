@@ -29,7 +29,7 @@ router.get('/:id/actions',  validateProjectId, async (req, res) => {
     try {
         const project = await projectsModel.findById(req.project.id)
         const projectActions = await projectsModel.findActionsById(req.project.id)
-        projectWithActions = {
+        const projectWithActions = {
             ...project,
             actions: projectActions
         }

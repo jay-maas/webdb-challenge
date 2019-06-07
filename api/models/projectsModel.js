@@ -22,7 +22,7 @@ function findById(id) {
 function findActionsById(projectId) {
     return db('actions')
         .join('projects', 'actions.project_id', 'projects.id')
-        .select('actions.id', 'actions.name', 'projects.id as cohortId', 'projects.name as project')
+        .select('actions.id', 'actions.name')
         .where({ project_id: projectId })
 }
 

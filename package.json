@@ -1,7 +1,7 @@
 {
-  "name": "be-node-boiler-no-auth",
+  "name": "web-db-challenge",
   "version": "1.0.0",
-  "description": "No auth node server boiler plate",
+  "description": "BE sprint challenge for the DataBase Persistance Sprint week",
   "main": "index.js",
   "scripts": {
     "server": "nodemon"
