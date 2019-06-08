@@ -67,6 +67,7 @@ function remove(id) {
 }
 
 function removeActionsContext(id) {
+    console.log(id)
     return db('actions_context')
         .where({ id })
         .del()

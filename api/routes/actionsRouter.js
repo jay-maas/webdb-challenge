@@ -86,9 +86,6 @@ router.delete('/:id', validateActionId, async (req, res) => {
     }
 })
 
-
-//this is not returning the proper req into the function of removeActionsContext. 
-
 router.delete('/:id/contexts', validateActionId, validateActionsContextId, async (req, res) => {
     try {
         console.log(req.actions_context.id)
@@ -134,6 +131,7 @@ async function validateContextId(req, res, next) {
 
 async function validateActionsContextId(req, res, next) {
     if (!isEmpty(req.body)) {
+        console.log(req.body)
         const actions_context = await actionsModel.findActionsContextById(req.body.actions_context_id)
         if (actions_context) {
             req.actions_context = actions_context
@@ -145,7 +143,7 @@ async function validateActionsContextId(req, res, next) {
         }
     } else {
         res.status(400).json({
-            errorMessage: 'Missing required context_id.'
+            errorMessage: 'Missing required actions_context_id.'
         })
     }
 }
